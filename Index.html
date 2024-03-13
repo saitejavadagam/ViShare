@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+          margin:0;
+            background-color: #f2f2f2;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .topnav {
+            background-color: navy;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .topnav a {
+            color:white;
+            text-decoration: none;
+            text-align: center;
+            padding: 14px 16px;
+            display: block;
+            
+        }
+
+        .topnav a:hover{
+            background-color: #ddd;
+            color:black;
+            transition: background-color .5s ease-in-out,color .5s ease-in-out;
+        }
+        
+
+        .videos-container {
+            margin:5px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+          }
+      
+          .video-thumbnail {
+            width: 100%;
+            aspect-ratio: 16/9;
+          }
+
+          .video-thumbnail:active {
+
+          }
+      
+          .video-info {
+            padding: 10px;
+          }
+      
+          .video-title {
+            font-size: 18px;
+            margin: 5px 0;
+          }
+
+          
+      
+          .video-details {
+            font-size: 14px;
+            color: #666;
+            display: flex;
+            align-items: center;
+          }
+
+          .profile-logo {
+            width:30px;
+            aspect-ratio: 1/1;
+            background-color: black;
+            border-radius: 50%;
+            margin-right: 10px;
+            background-image: url("https://www.iucn.org/sites/default/files/styles/what_we_do/public/images-themes/freashwater-shutterstock_1288634614.jpg.webp?itok=A8U_qyB5");
+            background-position: fixed;
+            background-size: contain;
+        }
+        
+        
+        
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+  </head>
+<body>
+    <div class="header">
+        <h1>ViShare.com</h1>
+    </div>
+    <div class="topnav">
+        <a href="" class="active">Home</a>
+        <a href="">Contact</a>
+        <a href="">Login</a>
+    </div>
+    <marquee style="color:red;">This site will be released soon.....</marquee>
+    
+    <div class="videos-container"></div>
+
+<script>
+
+function Video({ thumbnailSrc, title, username, profileSrc, views }) {
+  return `
+    <div class="video">
+      <img src="${thumbnailSrc}" alt="Video Thumbnail" class="video-thumbnail">
+      <div class="video-info">
+        <h2 class="video-title">${title}</h2>
+        <p class="video-details"><span class="profile-logo"></span> ${username} | <i class="fa fa-eye"></i>: ${views}</p>
+      </div>
+    </div>
+  `;
+}
+const videoContainer = document.querySelector(".videos-container");
+
+async function renderVideos(url) {
+  const response = await fetch(url);
+  const videos = await response.json();
+  console.log(videos)
+
+  const videoHTML = videos.map(video=> Video(video) ).join('');
+  console.log(videoHTML);
+  videoContainer.innerHTML = videoHTML;
+}
+
+renderVideos("http://192.168.1.2:5500/html/ttproject/videos.json")
+</script>
+</body>
+</html>
