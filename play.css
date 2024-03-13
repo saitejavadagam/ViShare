@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family:'Roboto',Arial,sans-serif;
+}
+
+body {
+    background-color: #eee;
+}
+
+.top-nav {
+    background-color: royalblue;
+    color:white;
+    height: 50px;
+    box-sizing: border-box;
+}
+
+.top-nav a {
+    position: relative;
+text-decoration: none;
+padding: 13px 10px;
+color:white;
+float:left;
+}
+
+.top-nav a:hover {
+    color: black;
+    background-color: aliceblue;
+}
+
+.top-nav a:active {
+    background-color: red;
+    color:black;
+}
+
+.left-column {
+    width: 65%;
+    box-sizing: border-box;
+    flex: 0 0 70%; /* Adjust the width as needed */
+    border-radius: 8px;
+    padding: 20px;
+    float:left;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.right-column {
+    float:right;
+    max-height: fit-content;
+    width: 35%;
+    box-sizing: border-box;
+    padding: 5px 5px;
+}
+
+.video-player-details {
+    text-align: left;
+}
+
+.video-player-title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 10;
+}
+
+.video-player-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px 5px;
+}
+
+.video-player {
+    width: 99%;
+    aspect-ratio: 16/9;
+    border-radius: 10px;
+}
+
+.channel-details {
+    display:flex;
+    align-items: center;
+}
+
+.channel-logo {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.channel-info {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.sub-count {
+    color:#555;
+}
+
+.channel-name {
+    font-size:20px;
+    font-weight: 600;
+}
+
+#subscribe {
+    border: 0;
+    height: 46px;
+    padding: 10px 16px;
+    border-radius: 30px;
+    font-weight:bold;
+    font-size:16px;
+    margin-left: 30px;
+}
+
+#subscribe:hover {
+    background-color: #ddd;
+}
+
+.description {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 10px 10px 10px 10px;
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.grid-container {
+    margin:5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .video-thumbnail {
+    width: 90%;
+    height: auto;
+  }
+
+  .video-thumbnail:active {
+
+  }
+
+  .video-info {
+    padding: 10px;
+  }
+
+  .video-title {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+
+  
+
+  .video-details {
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    align-items: center;
+  }
+
+  .profile-logo {
+    width:30px;
+    aspect-ratio: 1/1;
+    background-color: black;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-image: url("https://www.iucn.org/sites/default/files/styles/what_we_do/public/images-themes/freashwater-shutterstock_1288634614.jpg.webp?itok=A8U_qyB5");
+    background-position: fixed;
+    background-size: contain;
+}
+
+
+
